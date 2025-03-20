@@ -6,7 +6,7 @@ export function Header() {
   return (
     <div className="flex px-2 justify-between items-center min-h-14 bg-menuForeground">
       <div className="flex items-center justify-center">
-        <FaBars className='hover:bg-hoverColor rounded-full' size={16} />
+        <FaBars className='hover:bg-hoverColor' size={16} />
       </div>
 
      

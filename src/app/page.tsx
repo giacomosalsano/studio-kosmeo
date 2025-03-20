@@ -9,7 +9,7 @@ export default function Home() {
 
 
   return (
-    <div className="items-center min-h-screen">
+    <div className="items-center">
       <Header/>
       <ComingSoon/>
       <Footer/>

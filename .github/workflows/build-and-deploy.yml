@@ -30,6 +30,11 @@ jobs:
           cd studio-kosmeo/studio-kosmeo
           yarn build
 
+      - name: Disable Jekyll on GitHub Pages
+        run: |
+          touch .nojekyll
+
+
   deploy:
     runs-on: ubuntu-latest
     needs: build  # O deploy depende do job de build

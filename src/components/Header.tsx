@@ -12,7 +12,7 @@ export function Header() {
      
       <div className="absolute left-1/2 transform -translate-x-1/2">
         <Image
-          src="/KosmeoLogo-Idea6_Option3.1-logoSemFundoCorte.PNG"
+          src="/studio-kosmeo/KosmeoLogo-Idea6_Option3.1-logoSemFundoCorte.PNG"
           alt="Kosmeo Logo"
           width={90}
           height={90}

@@ -7,7 +7,7 @@ export function ComingSoon() {
     <div className='flex flex-col gap-5 items-center justify-center overflow-hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
       <div className='flex items-center justify-center'>
         <Image
-          src="/KosmeoLogo-Idea6_Option3.1-logoSemFundoCorte.PNG"
+          src="/studio-kosmeo/KosmeoLogo-Idea6_Option3.1-logoSemFundoCorte.PNG"
           alt="Kosmeo Logo"
           width={300}
           height={300}

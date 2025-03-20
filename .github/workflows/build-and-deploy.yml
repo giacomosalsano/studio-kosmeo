@@ -1,0 +1,46 @@
+name: Build and Deploy
+
+on:
+  push:
+    paths:
+      - 'studio-kosmeo/studio-kosmeo/**'  # Aciona a action apenas se houver mudanças nessa pasta
+  pull_request:
+    paths:
+      - 'studio-kosmeo/studio-kosmeo/**'  # Também para pull requests
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Defina a versão do Node.js que você está utilizando
+      
+      - name: Install dependencies
+        run: |
+          cd studio-kosmeo/studio-kosmeo
+          yarn
+
+      - name: Build the project
+        run: |
+          cd studio-kosmeo/studio-kosmeo
+          yarn build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build  # O deploy depende do job de build
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Branch onde o conteúdo será publicado
+          folder: studio-kosmeo/studio-kosmeo/out  # Diretório de build, ajuste conforme seu projeto
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
